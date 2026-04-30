@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | WU Apparel</title>
+  <meta name="description" content="Complete your purchase at WU Apparel. Secure checkout with PKR pricing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <nav class="navbar light">
+    <div class="navbar-inner">
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="project-team.html">Project Team</a>
+      </div>
+      <a href="index.html" class="logo">
+        <div class="logo-mark">WU</div>
+        <div class="logo-text">Apparel</div>
+      </a>
+      <div class="nav-actions">
+        <button class="nav-action-btn cart-toggle" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+          <span class="cart-count" style="display:none">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="project-team.html">Project Team</a>
+  </div>
+
+  <section class="checkout-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:48px;">
+        <div class="section-label">Secure Checkout</div>
+        <h2 class="section-title">Complete Your Order</h2>
+      </div>
+      <div class="checkout-grid">
+        <div class="checkout-form-wrapper gsap-checkout-left">
+          <h3 class="checkout-heading">Shipping Details</h3>
+          <form id="checkoutForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Ali" required>
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Khan" required>
+                <div class="form-error"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="checkoutEmail">Email Address</label>
+              <input type="email" id="checkoutEmail" name="email" placeholder="you@example.com" required>
+              <div class="form-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required>
+              <div class="form-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address" placeholder="House #, Street, Area" required>
+              <div class="form-error"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="e.g. Lahore" required>
+                <div class="form-error"></div>
+              </div>
+              <div class="form-group">
+                <label for="postal">Postal Code</label>
+                <input type="text" id="postal" name="postal" placeholder="54000" required>
+                <div class="form-error"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="province">Province</label>
+              <select id="province" name="province" required>
+                <option value="">Select Province</option>
+                <option value="punjab">Punjab</option>
+                <option value="sindh">Sindh</option>
+                <option value="kpk">Khyber Pakhtunkhwa</option>
+                <option value="balochistan">Balochistan</option>
+                <option value="gilgit">Gilgit-Baltistan</option>
+                <option value="ajk">Azad Kashmir</option>
+                <option value="islamabad">Islamabad Capital Territory</option>
+              </select>
+              <div class="form-error"></div>
+            </div>
+
+            <h3 class="checkout-heading" style="margin-top:48px;">Payment Method</h3>
+            <div class="payment-options">
+              <label class="payment-option active">
+                <input type="radio" name="payment" value="cod" checked>
+                <div class="payment-option-content">
+                  <div class="payment-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+                  <div class="payment-info"><strong>Cash on Delivery</strong><span>Pay when your order arrives</span></div>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card">
+                <div class="payment-option-content">
+                  <div class="payment-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+                  <div class="payment-info"><strong>Credit / Debit Card</strong><span>Visa, Mastercard, PayPak</span></div>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="easypaisa">
+                <div class="payment-option-content">
+                  <div class="payment-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+                  <div class="payment-info"><strong>EasyPaisa / JazzCash</strong><span>Mobile wallet payment</span></div>
+                </div>
+              </label>
+            </div>
+            <button type="submit" class="checkout-submit-btn">Place Order</button>
+          </form>
+        </div>
+        <div class="checkout-summary gsap-checkout-right">
+          <h3 class="checkout-heading">Order Summary</h3>
+          <div class="checkout-items" id="checkoutItems"></div>
+          <div class="checkout-totals">
+            <div class="checkout-total-row"><span>Subtotal</span><span id="checkoutSubtotal">PKR 0</span></div>
+            <div class="checkout-total-row"><span>Shipping</span><span id="checkoutShipping">PKR 0</span></div>
+            <div class="checkout-total-row grand"><span>Total</span><span id="checkoutTotal">PKR 0</span></div>
+          </div>
+          <p class="checkout-note">All prices include applicable taxes. Free shipping on orders over PKR 27,800.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <span class="cart-title">Your Cart</span>
+      <button class="cart-close" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-value">$0.00</span>
+      </div>
+      <p class="cart-note">Shipping and taxes calculated at checkout.</p>
+      <button class="cart-checkout">Check Out</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-mark">WU</div>
+          <p>Premium essentials for the modern individual. Designed with intention, crafted with care.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 12 8v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+            <li><a href="shop.html">Tees</a></li>
+            <li><a href="shop.html">Outerwear</a></li>
+            <li><a href="shop.html">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="project-team.html">Project Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>2025 WU Apparel. All rights reserved.</p>
+        <div class="footer-payment">
+          <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAK</span><span>EASYPAISA</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.section-header .section-label', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' });
+        gsap.from('.section-header .section-title', { opacity: 0, y: 30, duration: 1, delay: 0.2, ease: 'power3.out' });
+        gsap.from('.gsap-checkout-left', { opacity: 0, x: -40, duration: 1, delay: 0.4, ease: 'power3.out' });
+        gsap.from('.gsap-checkout-right', { opacity: 0, x: 40, duration: 1, delay: 0.6, ease: 'power3.out' });
+        if (document.querySelectorAll('.payment-option').length > 0) {
+          gsap.from('.payment-option', { y: 15, duration: 0.5, stagger: 0.08, delay: 0.5, ease: 'power3.out' });
+        }
+      }
+      document.querySelectorAll('.payment-option input').forEach(input => {
+        input.addEventListener('change', () => {
+          document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+          input.closest('.payment-option').classList.add('active');
+        });
+      });
+      const checkoutForm = document.getElementById('checkoutForm');
+      if (checkoutForm) {
+        checkoutForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let valid = true;
+          checkoutForm.querySelectorAll('.form-error').forEach(el => { el.textContent = ''; el.classList.remove('visible'); });
+          checkoutForm.querySelectorAll('input, select').forEach(el => el.classList.remove('error'));
+          const fields = {
+            firstName: document.getElementById('firstName'),
+            lastName: document.getElementById('lastName'),
+            email: document.getElementById('checkoutEmail'),
+            phone: document.getElementById('phone'),
+            address: document.getElementById('address'),
+            city: document.getElementById('city'),
+            postal: document.getElementById('postal'),
+            province: document.getElementById('province')
+          };
+          if (!fields.firstName.value.trim() || fields.firstName.value.trim().length < 2) { showErr(fields.firstName, 'Please enter your first name'); valid = false; }
+          if (!fields.lastName.value.trim() || fields.lastName.value.trim().length < 2) { showErr(fields.lastName, 'Please enter your last name'); valid = false; }
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!fields.email.value.trim() || !emailRegex.test(fields.email.value.trim())) { showErr(fields.email, 'Please enter a valid email'); valid = false; }
+          if (!fields.phone.value.trim() || fields.phone.value.trim().length < 10) { showErr(fields.phone, 'Please enter a valid phone number'); valid = false; }
+          if (!fields.address.value.trim()) { showErr(fields.address, 'Please enter your address'); valid = false; }
+          if (!fields.city.value.trim()) { showErr(fields.city, 'Please enter your city'); valid = false; }
+          if (!fields.postal.value.trim()) { showErr(fields.postal, 'Please enter postal code'); valid = false; }
+          if (!fields.province.value) { showErr(fields.province, 'Please select a province'); valid = false; }
+          if (valid) {
+            const orderNumber = 'WU-' + Date.now().toString(36).toUpperCase();
+            const orderData = {
+              orderNumber, items: cart,
+              subtotal: cartTotal(),
+              shipping: cartTotal() >= 100 ? 0 : 10,
+              total: cartTotal() + (cartTotal() >= 100 ? 0 : 10),
+              customer: {
+                firstName: fields.firstName.value.trim(), lastName: fields.lastName.value.trim(),
+                email: fields.email.value.trim(), phone: fields.phone.value.trim(),
+                address: fields.address.value.trim(), city: fields.city.value.trim(),
+                postal: fields.postal.value.trim(), province: fields.province.value
+              },
+              paymentMethod: document.querySelector('input[name="payment"]:checked').value,
+              date: new Date().toISOString()
+            };
+            sessionStorage.setItem('wu_order', JSON.stringify(orderData));
+            cart = []; saveCart();
+            window.location.href = 'thankyou.html';
+          }
+        });
+      }
+      function showErr(field, msg) {
+        field.classList.add('error');
+        const err = field.parentElement.querySelector('.form-error');
+        if (err) { err.textContent = msg; err.classList.add('visible'); }
+      }
+    });
+  </script>
+</body>
+</html>
